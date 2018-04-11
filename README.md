@@ -11,4 +11,4 @@
 
 ### Screencast from our Demo
 
-![](https://github.com/ChinaHackers/Compass/raw/master/Screencast/Screencast.gif)
+<img  src="https://github.com/ChinaHackers/Compass/raw/master/Screencast/Screencast.gif" width="300">
