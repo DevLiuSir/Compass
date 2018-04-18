@@ -10,16 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    /// 开启指南针按钮
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func openCompassBtn(_ sender: UIButton) {
+        let compassVC = CompassController()
+        self.present(compassVC, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
