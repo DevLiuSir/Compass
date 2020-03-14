@@ -15,99 +15,52 @@ class CompassController: UIViewController {
 
     // MARK: - Lazy Loading View
     
-    // 位置信息
     /// 定位管理器
     private lazy var locationManager : CLLocationManager = CLLocationManager()
+    /// 地理坐标以及准确性和时间戳信息。
     private lazy var currLocation: CLLocation = CLLocation()
     
     /// 刻度视图
-    fileprivate lazy var dScaView: DegreeScaleView = {
-        let viewF = CGRect(x: 0, y: 0, width: view.frame.size.width - 30, height: view.frame.size.width - 30)
+    private lazy var dScaView: DegreeScaleView = {
+        let viewF = CGRect(x: 0, y: 123, width: screenW, height: screenW)
         let scaleV = DegreeScaleView(frame: viewF)
-        scaleV.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
         scaleV.backgroundColor = .black
         return scaleV
     }()
     
-    /// 角度label
-    private lazy var angleLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: dScaView.frame.maxY, width: view.frame.size.width / 2, height: 100))
-        label.font = UIFont.systemFont(ofSize: 60)
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
+    /// 地理位置信息视图
+    private lazy var geographyInfoView: GeographyInfoView = {
+        let geo = GeographyInfoView.loadingGeographyInfoView()
+        geo.frame = CGRect(x: 0, y: 617, width: screenW, height: 165)
+        return geo
     }()
-    
-    /// 方向label
-    private lazy var directionLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: view.frame.size.width / 2, y: angleLabel.frame.origin.y, width: view.frame.width / 2, height: 25))
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = .white
-        return label
-    }()
-
-    /// 地理位置Label
-    private lazy var positionLabel: UILabel = {
-        let viewF = CGRect(x: view.frame.size.width / 2, y: directionLabel.frame.maxY, width: view.frame.size.width / 2, height: directionLabel.Height * 2)
-        let label = UILabel(frame: viewF)
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = .white
-        return label
-    }()
-    
-    /// 经纬度Label
-    private lazy var latitudeAndLongitudeLabel: UILabel = {
-        let viewF = CGRect(x: 0, y: angleLabel.frame.maxY, width: view.frame.size.width, height: 30)
-        let label = UILabel(frame: viewF)
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
-    }()
-    
-    /// 海拔高度Label
-    private lazy var altitudeLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: latitudeAndLongitudeLabel.frame.maxY, width: view.frame.maxX, height: 30))
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
-    }()
-    
-    // MARK: - 销毁(destroy)
+   
+    // MARK: - Destroy
     // deinit() 类反初始化（析构方法）
     deinit {
         locationManager.stopUpdatingHeading()   // 停止获得航向数据，省电
         locationManager.delegate = nil
     }
+}
+
+//MARK: - View Life Cycle
+extension CompassController {
     
-    // MARK: - System Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configUI()
         createLocationManager()
     }
 }
 
-// MARK: - Custom Method
+//MARK: - Configure
 extension CompassController {
     
     /// 配置UI界面
     private func configUI() {
         view.backgroundColor = .black
-        addSub()
-    }
-    
-    /// 添加视图
-    private func addSub() {
         view.addSubview(dScaView)
-        view.addSubview(angleLabel)
-        view.addSubview(directionLabel)
-        view.addSubview(positionLabel)
-        view.addSubview(latitudeAndLongitudeLabel)
-        view.addSubview(altitudeLabel)
+        view.addSubview(geographyInfoView)
     }
     
     /// 创建初始化定位装置
@@ -142,7 +95,7 @@ extension CompassController {
         
         // 允许后台定位更新,进入后台后有蓝条闪动
         locationManager.allowsBackgroundLocationUpdates = true
-
+        
         // 判断定位设备是否允许使用定位服务 和 是否获得导航数据
         if CLLocationManager.locationServicesEnabled() && CLLocationManager.headingAvailable() {
             locationManager.startUpdatingLocation()     // 开始定位服务
@@ -152,6 +105,11 @@ extension CompassController {
             print("不能获得航向数据")
         }
     }
+    
+}
+
+// MARK: - Update location information
+extension CompassController {
     
     /// 更新当前手机（摄像头)朝向方向
     ///
@@ -166,25 +124,25 @@ extension CompassController {
         
         switch angle {
         case 0:
-            directionLabel.text = "北"
+            geographyInfoView.directionLabel.text = "北"
         case 90:
-            directionLabel.text = "东"
+            geographyInfoView.directionLabel.text = "东"
         case 180:
-            directionLabel.text = "南"
+            geographyInfoView.directionLabel.text = "南"
         case 270:
-            directionLabel.text = "西"
+            geographyInfoView.directionLabel.text = "西"
         default:
             break
         }
         
         if angle > 0 && angle < 90 {
-            directionLabel.text = "东北"
+            geographyInfoView.directionLabel.text = "东北"
         }else if angle > 90 && angle < 180 {
-            directionLabel.text = "东南"
+            geographyInfoView.directionLabel.text = "东南"
         }else if angle > 180 && angle < 270 {
-            directionLabel.text = "西南"
+            geographyInfoView.directionLabel.text = "西南"
         }else if angle > 270 {
-            directionLabel.text = "西北"
+            geographyInfoView.directionLabel.text = "西北"
         }
     }
     
@@ -232,91 +190,59 @@ extension CompassController: CLLocationManagerDelegate {
         currLocation = locations.last!
         
         /// 经度
-        let longitudeStr = String(format: "%3.2f", currLocation.coordinate.longitude)
+        let longitudeStr = String(format: "%3.4f", currLocation.coordinate.longitude)
         
         /// 纬度
-        let latitudeStr = String(format: "%3.2f", currLocation.coordinate.latitude)
+        let latitudeStr = String(format: "%3.4f", currLocation.coordinate.latitude)
         
         /// 海拔
         let altitudeStr = "\(Int(currLocation.altitude))"
         
-        
-        /***** 1.处理经度 *****/
-        /// 字符串范围截取
-        let stringRange = longitudeStr.range(of: ".")
-        
-        /// 整数: 根据某个字符串截取. 截取小数点前字符
-        let wholeNumber = longitudeStr.prefix(upTo: stringRange!.lowerBound)
-        
-        /// 小数点后面部分 截取小数点后字符
-        let decimalPointBehind = longitudeStr.suffix(from: stringRange!.upperBound)
-        
-        /// 拼接度数(°)后的整数
-        let newWholeNumber = wholeNumber + "°"
-        
-        /// 拼接(')后的小数后面部分
-        let newDecimalPointBehind = decimalPointBehind + "'"
-        
         /// 新拼接的东经度
-        let newLongitudeStr = newWholeNumber + newDecimalPointBehind
-        
-        /***** 2.处理纬度 *****/
-        /// 字符串范围截取
-        let stringRange2 = latitudeStr.range(of: ".")
-        
-        /// 整数: 根据某个字符串截取. 截取小数点前字符
-        let wholeNumber2 = latitudeStr.prefix(upTo: stringRange2!.lowerBound)
-        
-        /// 小数点后面部分 截取小数点后字符
-        let decimalPointBehind2 = latitudeStr.suffix(from: stringRange2!.upperBound)
-        
-        /// 拼接度数(°)后的整数
-        let newWholeNumber2 = wholeNumber2 + "°"
-        
-        /// 拼接(')后的小数后面部分
-        let newDecimalPointBehind2 = decimalPointBehind2 + "'"
+        let newLongitudeStr = longitudeStr.DegreeToString(d: Double(longitudeStr)!)
         
         /// 新拼接的北纬度
-        let newlatitudeStr = newWholeNumber2 + newDecimalPointBehind2
+        let newlatitudeStr = latitudeStr.DegreeToString(d: Double(latitudeStr)!)
         
-//        latitudeAndLongitudeLabel.text = "北纬：\(latitudeStr)  东经：\(longitudeStr)"
+        print("北纬：\(newlatitudeStr)")
+        print("东经：\(newLongitudeStr)")
         
-        latitudeAndLongitudeLabel.text = "北纬：\(newlatitudeStr)  东经：\(newLongitudeStr)"
+        geographyInfoView.latitudeAndLongitudeLabel.text = "北纬 \(newlatitudeStr)  东经 \(newLongitudeStr)"
+        geographyInfoView.altitudeLabel.text = "海拔\(altitudeStr)米"
         
-        altitudeLabel.text = "海拔：\(altitudeStr) 米"
-
         // 反地理编码
         /// 创建CLGeocoder对象
         let geocoder = CLGeocoder()
-        
+
         /*** 反向地理编码请求 ***/
-        
+
         // 根据给的经纬度地址反向解析,得到字符串地址.
         geocoder.reverseGeocodeLocation(currLocation) { (placemarks, error) in
-            
+
             guard let placeM = placemarks else { return }
             // 如果解析成功执行以下代码
             guard placeM.count > 0 else { return }
             /* placemark: 包含所有位置信息的结构体 */
             // 包含区，街道等信息的地标对象
             let placemark: CLPlacemark = placeM[0]
-            
+
             /// 存放街道,省市等信息
             let addressDictionary = placemark.postalAddress
-            
+
             /// 国家
             guard let country = addressDictionary?.country else { return }
-            
+
             /// 城市
             guard let city = addressDictionary?.city else { return }
-            
+
             /// 子地点
             guard let subLocality = addressDictionary?.subLocality else { return }
-            
+
             /// 街道
             guard let street = addressDictionary?.street else { return }
-       
-            self.positionLabel.text = "\(country)\n\(city) \(subLocality) \(street)"
+
+            //self.positionLabel.text = "\(country)\n\(city) \(subLocality) \(street)"
+            self.geographyInfoView.positionLabel.text = "\(country)\(city) \(subLocality) \(street)"
         }
  
     }
@@ -342,8 +268,8 @@ extension CompassController: CLLocationManagerDelegate {
             /// 地磁北方向
             let headi: Float = -1.0 * Float.pi * Float(newHeading.magneticHeading) / 180.0
             // 设置角度label文字
-            angleLabel.text = "\(Int(magneticHeading))°"
-
+            geographyInfoView.angleLabel.text = "\(Int(magneticHeading))"
+            
             // 3.旋转变换
             dScaView.resetDirection(CGFloat(headi))
             
@@ -385,8 +311,9 @@ extension CompassController: CLLocationManagerDelegate {
             print("前,后台定位授权")
         case .authorizedWhenInUse:
             print("前台定位授权")
+        @unknown default:
+            fatalError()
         }
     }
     
- 
 }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GeographyInfoView" customModule="CompassExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="qqz-ry-wsT">
+                    <rect key="frame" x="71.5" y="0.0" width="122.5" height="83"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="83" id="TS8-pH-ObN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="70"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIo-Bz-NBu">
+                    <rect key="frame" x="194" y="0.0" width="26" height="83"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="zIv-z4-iNd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西北" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="tj7-HF-Fwu">
+                    <rect key="frame" x="235" y="0.0" width="141" height="83"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="83" id="Jly-Q3-P30"/>
+                        <constraint firstAttribute="width" constant="141" id="LdX-ha-h3C"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="70"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VaK-kc-sYL">
+                    <rect key="frame" x="0.0" y="99.5" width="414" height="67"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北纬 31°3′47″  东经 109°50′59″" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-J5-wfM">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="xUn-Ly-h6a"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国重庆市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1O-2k-oCt">
+                            <rect key="frame" x="0.0" y="22" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海拔260米" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kts-Cj-avf">
+                            <rect key="frame" x="0.0" y="46.5" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="kuu-J5-wfM" firstAttribute="leading" secondItem="VaK-kc-sYL" secondAttribute="leading" id="1mB-mE-QtE"/>
+                        <constraint firstItem="Kts-Cj-avf" firstAttribute="height" secondItem="w1O-2k-oCt" secondAttribute="height" id="94c-24-jTc"/>
+                        <constraint firstItem="Kts-Cj-avf" firstAttribute="width" secondItem="w1O-2k-oCt" secondAttribute="width" id="Fep-GV-GP9"/>
+                        <constraint firstAttribute="trailing" secondItem="w1O-2k-oCt" secondAttribute="trailing" id="FqS-GV-r5U"/>
+                        <constraint firstItem="kuu-J5-wfM" firstAttribute="width" secondItem="VaK-kc-sYL" secondAttribute="width" id="HQU-GB-WzI"/>
+                        <constraint firstAttribute="bottom" secondItem="Kts-Cj-avf" secondAttribute="bottom" id="MZt-e0-y09"/>
+                        <constraint firstItem="kuu-J5-wfM" firstAttribute="top" secondItem="VaK-kc-sYL" secondAttribute="top" id="MlI-Uu-5Tn"/>
+                        <constraint firstItem="w1O-2k-oCt" firstAttribute="height" secondItem="kuu-J5-wfM" secondAttribute="height" multiplier="1.13889" id="OZh-D9-N4k"/>
+                        <constraint firstItem="w1O-2k-oCt" firstAttribute="leading" secondItem="VaK-kc-sYL" secondAttribute="leading" id="drL-os-y6o"/>
+                        <constraint firstItem="w1O-2k-oCt" firstAttribute="width" secondItem="kuu-J5-wfM" secondAttribute="width" id="gE1-n1-NvN"/>
+                        <constraint firstAttribute="trailing" secondItem="kuu-J5-wfM" secondAttribute="trailing" id="zRc-lX-PPD"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qqz-ry-wsT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="71.5" id="8QX-Lu-2uE"/>
+                <constraint firstItem="tj7-HF-Fwu" firstAttribute="leading" secondItem="rIo-Bz-NBu" secondAttribute="trailing" constant="15" id="DSI-VE-CxI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VaK-kc-sYL" secondAttribute="trailing" id="Kzs-a7-LHJ"/>
+                <constraint firstItem="rIo-Bz-NBu" firstAttribute="height" secondItem="qqz-ry-wsT" secondAttribute="height" id="LQD-Xa-D6c"/>
+                <constraint firstItem="VaK-kc-sYL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OSv-GL-4jK"/>
+                <constraint firstItem="VaK-kc-sYL" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Pu5-Kj-a2C"/>
+                <constraint firstItem="tj7-HF-Fwu" firstAttribute="firstBaseline" secondItem="qqz-ry-wsT" secondAttribute="firstBaseline" id="RrP-sw-3en"/>
+                <constraint firstItem="qqz-ry-wsT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xwn-A0-ZlF"/>
+                <constraint firstItem="tj7-HF-Fwu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zxp-fh-Ve4"/>
+                <constraint firstItem="rIo-Bz-NBu" firstAttribute="top" secondItem="qqz-ry-wsT" secondAttribute="top" id="mdy-Fr-Qtd"/>
+                <constraint firstItem="rIo-Bz-NBu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sVC-XA-qHU"/>
+                <constraint firstItem="VaK-kc-sYL" firstAttribute="top" secondItem="qqz-ry-wsT" secondAttribute="firstBaseline" constant="33" id="ywN-AN-NmA"/>
+                <constraint firstItem="rIo-Bz-NBu" firstAttribute="leading" secondItem="qqz-ry-wsT" secondAttribute="trailing" id="zpV-la-6jH"/>
+            </constraints>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="altitudeLabel" destination="Kts-Cj-avf" id="Xj7-1i-tmr"/>
+                <outlet property="angleLabel" destination="qqz-ry-wsT" id="3MP-vZ-tb0"/>
+                <outlet property="directionLabel" destination="tj7-HF-Fwu" id="iKo-XB-ka9"/>
+                <outlet property="latitudeAndLongitudeLabel" destination="kuu-J5-wfM" id="eAR-WJ-kPc"/>
+                <outlet property="positionLabel" destination="w1O-2k-oCt" id="TnL-vX-6gf"/>
+            </connections>
+            <point key="canvasLocation" x="143.47826086956522" y="424.21875"/>
+        </view>
+    </objects>
+</document>

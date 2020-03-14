@@ -8,8 +8,9 @@
 
 import UIKit
 
-/// 屏幕高度
-public let screenH: CGFloat = UIScreen.main.bounds.height
+
+let screenH: CGFloat = UIScreen.main.bounds.height
+let screenW: CGFloat = UIScreen.main.bounds.width
 
 
 // MARK: - 扩展UIView

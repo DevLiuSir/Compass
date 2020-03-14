@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     /// - Parameter sender: UIButton
     @IBAction func openCompassBtn(_ sender: UIButton) {
         let compassVC = CompassController()
+        compassVC.modalPresentationStyle = .fullScreen
         self.present(compassVC, animated: true, completion: nil)
     }
     

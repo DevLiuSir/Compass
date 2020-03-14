@@ -8,28 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		6B18A4E42053BEB300102E0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18A4E32053BEB300102E0D /* AppDelegate.swift */; };
-		6B18A4E62053BEB300102E0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18A4E52053BEB300102E0D /* ViewController.swift */; };
 		6B18A4E92053BEB300102E0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B18A4E72053BEB300102E0D /* Main.storyboard */; };
 		6B18A4EB2053BEB300102E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B18A4EA2053BEB300102E0D /* Assets.xcassets */; };
 		6B18A4EE2053BEB300102E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B18A4EC2053BEB300102E0D /* LaunchScreen.storyboard */; };
-		6B18A4F62053BEB400102E0D /* DegreeScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18A4F52053BEB400102E0D /* DegreeScaleView.swift */; };
-		6B50881F2053DA62004042A7 /* CompassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50881E2053DA62004042A7 /* CompassController.swift */; };
+		6B27494124719AFC00F41CFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27493824719AFC00F41CFB /* ViewController.swift */; };
+		6B27494224719AFC00F41CFB /* CompassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27493924719AFC00F41CFB /* CompassController.swift */; };
+		6B27494324719AFC00F41CFB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27493B24719AFC00F41CFB /* UIView+Extension.swift */; };
+		6B27494424719AFC00F41CFB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27493C24719AFC00F41CFB /* String+Extension.swift */; };
+		6B27494524719AFC00F41CFB /* DegreeScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27493E24719AFC00F41CFB /* DegreeScaleView.swift */; };
+		6B27494624719AFC00F41CFB /* GeographyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27493F24719AFC00F41CFB /* GeographyInfoView.swift */; };
+		6B27494724719AFC00F41CFB /* GeographyInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27494024719AFC00F41CFB /* GeographyInfoView.xib */; };
 		6BB9DDB42057DC0300E0D51B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB9DDB32057DC0300E0D51B /* CoreLocation.framework */; };
-		6BBB40572083C8C700050E84 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBB40562083C8C700050E84 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B18A4E02053BEB300102E0D /* CompassExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompassExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B18A4E32053BEB300102E0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6B18A4E52053BEB300102E0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B18A4E82053BEB300102E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B18A4EA2053BEB300102E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B18A4ED2053BEB300102E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B18A4EF2053BEB400102E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B18A4F52053BEB400102E0D /* DegreeScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeScaleView.swift; sourceTree = "<group>"; };
-		6B50881E2053DA62004042A7 /* CompassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassController.swift; sourceTree = "<group>"; };
+		6B27493824719AFC00F41CFB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6B27493924719AFC00F41CFB /* CompassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassController.swift; sourceTree = "<group>"; };
+		6B27493B24719AFC00F41CFB /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		6B27493C24719AFC00F41CFB /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		6B27493E24719AFC00F41CFB /* DegreeScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeScaleView.swift; sourceTree = "<group>"; };
+		6B27493F24719AFC00F41CFB /* GeographyInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeographyInfoView.swift; sourceTree = "<group>"; };
+		6B27494024719AFC00F41CFB /* GeographyInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeographyInfoView.xib; sourceTree = "<group>"; };
 		6BB9DDB32057DC0300E0D51B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6BBB40562083C8C700050E84 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +70,44 @@
 		6B18A4E22053BEB300102E0D /* CompassExample */ = {
 			isa = PBXGroup;
 			children = (
+				6B27493D24719AFC00F41CFB /* View */,
+				6B27493724719AFC00F41CFB /* Controller */,
+				6B27493A24719AFC00F41CFB /* Extension */,
 				6B18A4E32053BEB300102E0D /* AppDelegate.swift */,
-				6B18A4E52053BEB300102E0D /* ViewController.swift */,
-				6B18A4F52053BEB400102E0D /* DegreeScaleView.swift */,
-				6B50881E2053DA62004042A7 /* CompassController.swift */,
-				6BBB40562083C8C700050E84 /* UIView+Extension.swift */,
 				6B18A4E72053BEB300102E0D /* Main.storyboard */,
 				6B18A4EA2053BEB300102E0D /* Assets.xcassets */,
 				6B18A4EC2053BEB300102E0D /* LaunchScreen.storyboard */,
 				6B18A4EF2053BEB400102E0D /* Info.plist */,
 			);
 			path = CompassExample;
+			sourceTree = "<group>";
+		};
+		6B27493724719AFC00F41CFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B27493824719AFC00F41CFB /* ViewController.swift */,
+				6B27493924719AFC00F41CFB /* CompassController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B27493A24719AFC00F41CFB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6B27493B24719AFC00F41CFB /* UIView+Extension.swift */,
+				6B27493C24719AFC00F41CFB /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6B27493D24719AFC00F41CFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B27493E24719AFC00F41CFB /* DegreeScaleView.swift */,
+				6B27493F24719AFC00F41CFB /* GeographyInfoView.swift */,
+				6B27494024719AFC00F41CFB /* GeographyInfoView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6BB9DDB22057DC0300E0D51B /* Frameworks */ = {
@@ -112,11 +145,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = LC;
 				TargetAttributes = {
 					6B18A4DF2053BEB300102E0D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -152,6 +186,7 @@
 				6B18A4EE2053BEB300102E0D /* LaunchScreen.storyboard in Resources */,
 				6B18A4EB2053BEB300102E0D /* Assets.xcassets in Resources */,
 				6B18A4E92053BEB300102E0D /* Main.storyboard in Resources */,
+				6B27494724719AFC00F41CFB /* GeographyInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,11 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B50881F2053DA62004042A7 /* CompassController.swift in Sources */,
-				6B18A4E62053BEB300102E0D /* ViewController.swift in Sources */,
-				6B18A4F62053BEB400102E0D /* DegreeScaleView.swift in Sources */,
-				6BBB40572083C8C700050E84 /* UIView+Extension.swift in Sources */,
+				6B27494124719AFC00F41CFB /* ViewController.swift in Sources */,
+				6B27494624719AFC00F41CFB /* GeographyInfoView.swift in Sources */,
+				6B27494524719AFC00F41CFB /* DegreeScaleView.swift in Sources */,
 				6B18A4E42053BEB300102E0D /* AppDelegate.swift in Sources */,
+				6B27494324719AFC00F41CFB /* UIView+Extension.swift in Sources */,
+				6B27494424719AFC00F41CFB /* String+Extension.swift in Sources */,
+				6B27494224719AFC00F41CFB /* CompassController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +243,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -213,6 +251,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -240,12 +279,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -263,6 +303,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -270,6 +311,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -291,10 +333,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -309,7 +352,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.CompassExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -324,7 +367,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.CompassExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
