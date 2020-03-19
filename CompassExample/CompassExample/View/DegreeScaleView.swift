@@ -12,11 +12,14 @@ import UIKit
 class DegreeScaleView: UIView {
     
     /// 背景视图
-    private lazy var backgroundView = UIView()
+    private lazy var backgroundView: UIView = {
+        let v = UIView(frame: bounds)
+        return v
+    }()
     
     /// 水平视图
     private lazy var levelView: UIView = {
-        let levelView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width / 2, height: 1))
+        let levelView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width / 2 - 50, height: 1))
         levelView.center = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
         levelView.backgroundColor = .white
         return levelView
@@ -24,7 +27,7 @@ class DegreeScaleView: UIView {
     
     /// 垂直视图
     private lazy var verticalView: UIView = {
-        let verticalView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: self.frame.size.height / 2))
+        let verticalView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: self.frame.size.height / 2 - 50))
         verticalView.center = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
         verticalView.backgroundColor = .white
         return verticalView
@@ -32,10 +35,20 @@ class DegreeScaleView: UIView {
     
     /// 指针视图
     private lazy var lineView: UIView = {
-        let lineView = UIView(frame: CGRect(x: self.frame.size.width / 2 - 1.5, y: self.frame.size.height/2 - (self.frame.size.width/2 - 50) - 50, width: 3, height: 60))
+        let lineView = UIView(frame: CGRect(x: self.frame.size.width / 2 - 1.5, y: 20, width: 3, height: 60))
         lineView.backgroundColor = .white
         return lineView
     }()
+    
+    /// 指南针三角视图
+    private lazy var compassTriangleView: UIView = {
+        let triangle = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenW))
+        triangle.backgroundColor = .clear
+        return triangle
+    }()
+    
+    /// 红色三角视图
+    private lazy var redTriangleView = UIView()
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -43,13 +56,12 @@ class DegreeScaleView: UIView {
         
         clipsToBounds = true
         layer.cornerRadius = frame.size.width / 2
-        backgroundView = UIView(frame: bounds)
-        
         addSubview(backgroundView)
         addSubview(levelView)
         addSubview(verticalView)
         insertSubview(lineView, at: 0)
         configScaleDial()
+        addSubview(compassTriangleView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -77,10 +89,9 @@ extension DegreeScaleView {
     ///
     /// - Parameter heading: 航向
     public func resetDirection(_ heading: CGFloat) {
-        
         backgroundView.transform = CGAffineTransform(rotationAngle: heading)
-        
         for label in backgroundView.subviews {
+            backgroundView.subviews[1].transform = .identity    // 红色三角视图，不旋转。
             label.transform = CGAffineTransform(rotationAngle: -heading)
         }
     }
@@ -118,7 +129,7 @@ extension DegreeScaleView {
             let endAngle: CGFloat = startAngle + angle / 2
             
             // 创建一个路径对象
-            let bezPath = UIBezierPath(arcCenter: po, radius: frame.size.width / 2 - 50, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+            let bezPath = UIBezierPath(arcCenter: po, radius: frame.size.width / 2 - 70, startAngle: startAngle, endAngle: endAngle, clockwise: true)
             
             /// 形变图层
             let shapeLayer = CAShapeLayer()
@@ -142,7 +153,7 @@ extension DegreeScaleView {
                 
                 let textAngle: CGFloat = startAngle + (endAngle - startAngle) / 2
                 
-                let point: CGPoint = calculateTextPositon(withArcCenter: po, andAngle: textAngle, andScale: 1.2)
+                let point: CGPoint = calculateTextPositon(withArcCenter: po, andAngle: textAngle, andScale: 1.15)
                 
                 // UILabel
                 let label = UILabel(frame: CGRect(x: point.x, y: point.y, width: 30, height: 20))
@@ -154,10 +165,9 @@ extension DegreeScaleView {
                 backgroundView.addSubview(label)
                 
                 if i % 45 == 0 {    //北 东 南 西
-                    
                     tickText = directionArray[i / 45]
                     
-                    let point2: CGPoint = calculateTextPositon(withArcCenter: po, andAngle: textAngle, andScale: 0.8)
+                    let point2: CGPoint = calculateTextPositon(withArcCenter: po, andAngle: textAngle, andScale: 0.65)
                     // UILabel
                     let label2 = UILabel(frame: CGRect(x: point2.x, y: point2.y, width: 30, height: 20))
                     label2.center = point2
@@ -168,40 +178,6 @@ extension DegreeScaleView {
                     
                     if tickText == "北" {
                         DrawRedTriangleView(point)
-                        
-                        
-                        /// 红色箭头
-//                        let redArrowLabel = UILabel(frame: CGRect(x: point.x, y: point.y, width: 8, height: 8))
-//                        redArrowLabel.center = CGPoint(x: point.x, y: point.y + 10)
-//                        redArrowLabel.clipsToBounds = true
-//                        redArrowLabel.layer.cornerRadius = redArrowLabel.frame.size.height / 2
-//                        redArrowLabel.backgroundColor = .red
-//                        redArrowLabel.textAlignment = .center
-//                        backgroundView.addSubview(redArrowLabel)
-
-
-//                        /// 红色三角视图
-//                        let redTriangleView = UIView(frame: CGRect(x: point.x, y: point.y, width: 10, height: 10))
-//                        redTriangleView.center = CGPoint(x: point.x, y: point.y + 10)
-//                        redTriangleView.backgroundColor = .clear
-//                        backgroundView.addSubview(redTriangleView)
-//
-//                        // 画三角
-//                        let trianglePath = UIBezierPath()
-//                        var point = CGPoint(x: 0, y: 10)
-//                        trianglePath.move(to: point)
-//                        point = CGPoint(x: 10 / 2, y: 0)
-//                        trianglePath.addLine(to: point)
-//                        point = CGPoint(x: 10, y: 10)
-//                        trianglePath.addLine(to: point)
-//                        trianglePath.close()
-//                        let triangleLayer = CAShapeLayer()
-//                        triangleLayer.path = trianglePath.cgPath
-//                        triangleLayer.fillColor = UIColor.red.cgColor
-//                        redTriangleView.layer.addSublayer(triangleLayer)
-                        
-                        
-                        
                     }
                     backgroundView.addSubview(label2)
                 }
@@ -209,24 +185,20 @@ extension DegreeScaleView {
         }
     }
     
-    
     /// 绘制红色三角形视图
     private func DrawRedTriangleView(_ point: CGPoint) {
-        
-        /// 红色三角视图
-        let redTriangleView = UIView(frame: CGRect(x: point.x, y: point.y, width: 10, height: 10))
-        redTriangleView.center = CGPoint(x: point.x, y: point.y + 10)
+        redTriangleView = UIView(frame: CGRect(x: point.x, y: point.y, width: 12, height: 12))
+        redTriangleView.center = CGPoint(x: point.x, y: point.y + 17)
         redTriangleView.backgroundColor = .clear
         backgroundView.addSubview(redTriangleView)
         
-        
         // 画三角
         let trianglePath = UIBezierPath()
-        var point = CGPoint(x: 0, y: 10)
+        var point = CGPoint(x: 0, y: 12)
         trianglePath.move(to: point)
-        point = CGPoint(x: 10 / 2, y: 0)
+        point = CGPoint(x: 12 / 2, y: 0)
         trianglePath.addLine(to: point)
-        point = CGPoint(x: 10, y: 10)
+        point = CGPoint(x: 12, y: 12)
         trianglePath.addLine(to: point)
         trianglePath.close()
         let triangleLayer = CAShapeLayer()

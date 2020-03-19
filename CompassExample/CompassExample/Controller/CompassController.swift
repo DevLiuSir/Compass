@@ -17,7 +17,7 @@ class CompassController: UIViewController {
     
     /// 定位管理器
     private lazy var locationManager : CLLocationManager = CLLocationManager()
-    /// 地理坐标以及准确性和时间戳信息。
+    /// 地理坐标以及准确性和时间戳信息
     private lazy var currLocation: CLLocation = CLLocation()
     
     /// 刻度视图

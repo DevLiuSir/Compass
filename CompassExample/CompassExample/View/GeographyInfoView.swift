@@ -12,6 +12,7 @@ import UIKit
 /// 地理位置信息视图
 class GeographyInfoView: UIView {
     
+    //MARK: - Control Properties
     /// 角度label
     @IBOutlet weak var angleLabel: UILabel!
     /// 方向label
@@ -24,7 +25,6 @@ class GeographyInfoView: UIView {
     @IBOutlet weak var altitudeLabel: UILabel!
     
 }
-
 
 //MARK: - View Life Cycle
 extension GeographyInfoView {
