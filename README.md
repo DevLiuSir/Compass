@@ -1,14 +1,24 @@
-<p align="center"> <b> This is an example of a iOS11 system compass. </b></p>
+<p align="center"> <b> This is an example of a iOS13 system compass. </b></p>
 
 ![language](https://img.shields.io/badge/language-swift-orange.svg)
-[![Swift  4.0](https://img.shields.io/badge/swift-4.0.3+-blue.svg?style=flat)](https://developer.apple.com/swift/)
-![xcode version](https://img.shields.io/badge/xcode-9+-brightgreen.svg)
-![build](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)
+[![swift version](https://img.shields.io/badge/swift-5.1+-blue.svg?style=flat)](https://developer.apple.com/swift/)
+![Xcode version](https://img.shields.io/badge/xcode-11.3+-red.svg)
+![Build state](https://img.shields.io/badge/build-passing-brightgreen)
+![GitHub top language](https://img.shields.io/github/languages/top/DevLiuSir/Compass?color=blueviolet)
+![https://github.com/DevLiuSir/Compass/blob/master/LICENSE](https://img.shields.io/github/license/DevLiuSir/Compass.svg)
 ![platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
-![https://github.com/ChinaHackers/Compass/blob/master/LICENSE](https://img.shields.io/github/license/ChinaHackers/Compass.svg)
-![Github Star](https://img.shields.io/github/stars/ChinaHackers/Compass.svg?style=social&label=Star)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/DevLiuSir/Compass?color=ff69b4&label=codeSize)
+![commits count](https://badgen.net/github/commits/DevLiuSir/Compass)
+![GitHub last commit](https://img.shields.io/github/last-commit/DevLiuSir/Compass)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/DevLiuSir/Compass)
+![Github Star](https://img.shields.io/github/stars/DevLiuSir/Compass.svg?style=social&label=Star)
+![GitHub forks](https://img.shields.io/github/forks/DevLiuSir/Compass?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/DevLiuSir/Compass?style=social)
 [![Twitter Follow](https://img.shields.io/twitter/follow/LiuChuan_.svg?style=social)](https://twitter.com/LiuChuan_)
 
-### Screencast from our Demo
+---
 
-<img  src="https://github.com/ChinaHackers/Compass/raw/master/Screencast/Screencast.gif" width="300">
+### Design
+
+<p align="center"> 
+<img  src="https://github.com/DevLiuSir/Compass/raw/master/Design/Showcase.gif" width="500" height="500"></p>
