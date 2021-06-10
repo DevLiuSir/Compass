@@ -16,13 +16,7 @@ import UIKit
  分 = 0.07167 * 60 = 4.3002（取整） = 4’
  秒 = 0.3002 * 60 = 18.012（取整） = 18''
  转换后 lon = 104°4’18’’
-
-     public static String D2Dms(double d_data){
-         int d = (int)d_data;
-         int m = (int)((d_data-d)*60);
-         int s = (int)(((d_data-d)*60-m)*60);
-         return  d+"°"+m+"′"+s+"″";
- }
+ 
  */
 
 extension String {

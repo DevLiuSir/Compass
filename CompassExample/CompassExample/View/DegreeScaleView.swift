@@ -169,7 +169,7 @@ extension DegreeScaleView {
                     
                     let point2: CGPoint = calculateTextPositon(withArcCenter: po, andAngle: textAngle, andScale: 0.65)
                     // UILabel
-                    let label2 = UILabel(frame: CGRect(x: point2.x, y: point2.y, width: 30, height: 20))
+                    let label2 = UILabel(frame: CGRect(x: point2.x, y: point2.y, width: 30, height: 30))
                     label2.center = point2
                     label2.text = tickText
                     label2.textColor = .white
